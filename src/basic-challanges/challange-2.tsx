@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const Challange = () => {
+const Challange = () => {
   const [moved, setMoved] = useState(false);
 
   return (
@@ -17,4 +17,11 @@ export const Challange = () => {
       </button>
     </div>
   );
+};
+
+export const Challange_2 = {
+  id: "2",
+  name: "Toggle a Box's Position",
+  description: "Create a box which toggles it's position in left or right when a button is clicked.",
+  Component: Challange,
 };

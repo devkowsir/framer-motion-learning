@@ -1,49 +1,30 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { ListChallanges } from "../components/list-challanges.tsx";
 import type { Challange } from "../types/index.ts";
-import { Challange as Challange_1 } from "./challange-1.tsx";
-import { Challange as Challange_2 } from "./challange-2.tsx";
-import { Challange as Challange_3 } from "./challange-3.tsx";
+import { Challange_1 } from "./challange-1.tsx";
+import { Challange_2 } from "./challange-2.tsx";
+import { Challange_3 } from "./challange-3.tsx";
 
-const challangeList: Challange[] = [
-  {
-    id: "1",
-    name: "Fade In and Fade Out",
-    description: "Create a box that fades in when the page loads and fades out when you click a button.",
-    Component: Challange_1,
-  },
-  {
-    id: "2",
-    name: "Toggle a Box's Position",
-    description: "Create a box which toggles it's position in left or right when a button is clicked.",
-    Component: Challange_2,
-  },
-  {
-    id: "3",
-    name: "Hover, Tap Animation",
-    description: "On hover change box background color and on tap box will scale up.",
-    Component: Challange_3,
-  },
-];
+const ChallangeList: Challange[] = [Challange_1, Challange_2, Challange_3];
 
 export const BasicChallanges = () => {
-  return <ListChallanges challangeList={challangeList} />;
+  return <ListChallanges challangeList={ChallangeList} />;
 };
 
 export const BasicChallange = () => {
   const navigate = useNavigate();
   const { challangeId } = useParams();
 
-  const challangeIndex = challangeList.findIndex(({ id }) => challangeId == id);
-  const challange = challangeList[challangeIndex];
+  const challangeIndex = ChallangeList.findIndex(({ id }) => challangeId == id);
+  const challange = ChallangeList[challangeIndex];
 
   if (!challange) {
     navigate("/basic-challanges");
     return null;
   }
 
-  const nextChallange = challangeList[challangeIndex + 1];
-  const prevChallange = challangeList[challangeIndex - 1];
+  const nextChallange = ChallangeList[challangeIndex + 1];
+  const prevChallange = ChallangeList[challangeIndex - 1];
 
   return (
     <div className="h-full flex flex-col gap-4">

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export const Challange = () => {
+const Challange = () => {
   return (
     <div className="h-full flex gap-4 flex-col justify-center items-center">
       <motion.div
@@ -11,4 +11,11 @@ export const Challange = () => {
       />
     </div>
   );
+};
+
+export const Challange_3 = {
+  id: "3",
+  name: "Hover, Tap Animation",
+  description: "On hover change box background color and on tap box will scale up.",
+  Component: Challange,
 };

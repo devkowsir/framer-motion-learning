@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const Challange = () => {
+const Challange = () => {
   const [hidden, setHidden] = useState(false);
 
   return (
@@ -17,4 +17,11 @@ export const Challange = () => {
       </button>
     </div>
   );
+};
+
+export const Challange_1 = {
+  id: "1",
+  name: "Fade In and Fade Out",
+  description: "Create a box that fades in when the page loads and fades out when you click a button.",
+  Component: Challange,
 };
