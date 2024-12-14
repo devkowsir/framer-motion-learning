@@ -35,6 +35,10 @@ export const BasicChallange = () => {
     <div className="h-full flex flex-col gap-4">
       {/* <challange.Component /> */}
       <div className="grow">
+        <div className="text-base-content/60">
+          <h1 className="text-lg font-bold">{challange.name}</h1>
+          <p className="text-sm">{challange.description}</p>
+        </div>
         <challange.Component />
       </div>
       <div className="flex">
