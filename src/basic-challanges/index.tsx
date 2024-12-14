@@ -3,6 +3,7 @@ import { ListChallanges } from "../components/list-challanges.tsx";
 import type { Challange } from "../types/index.ts";
 import { Challange as Challange_1 } from "./challange-1.tsx";
 import { Challange as Challange_2 } from "./challange-2.tsx";
+import { Challange as Challange_3 } from "./challange-3.tsx";
 
 const challangeList: Challange[] = [
   {
@@ -16,6 +17,12 @@ const challangeList: Challange[] = [
     name: "Toggle a Box's Position",
     description: "Create a box which toggles it's position in left or right when a button is clicked.",
     Component: Challange_2,
+  },
+  {
+    id: "3",
+    name: "Hover, Tap Animation",
+    description: "On hover change box background color and on tap box will scale up.",
+    Component: Challange_3,
   },
 ];
 
