@@ -6,11 +6,12 @@ export default {
   theme: {
     extend: {},
     container: {
+      padding: "1rem",
       center: true,
     },
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["dark"],
+    themes: ["light"],
   },
 };

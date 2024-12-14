@@ -41,7 +41,7 @@ export const BasicChallange = () => {
         </div>
         <challange.Component />
       </div>
-      <div className="flex">
+      <div className="flex flex-col gap-4 sm:flex-row">
         {prevChallange ? (
           <Link
             to={`/basic-challanges/${prevChallange.id}`}
