@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ListChallanges } from "../components/list-challanges.tsx";
 import type { Challange } from "../types/index.ts";
 import { Challange as Challange_1 } from "./challange-1.tsx";
@@ -13,30 +13,49 @@ const challangeList: Challange[] = [
 ];
 
 export const BasicChallanges = () => {
-  return (
-    <div>
-      <ListChallanges challangeList={challangeList} />
-    </div>
-  );
+  return <ListChallanges challangeList={challangeList} />;
 };
 
 export const BasicChallange = () => {
   const navigate = useNavigate();
   const { challangeId } = useParams();
 
-  const challange = challangeList.find(({ id }) => challangeId == id);
+  const challangeIndex = challangeList.findIndex(({ id }) => challangeId == id);
+  const challange = challangeList[challangeIndex];
+
   if (!challange) {
     navigate("/basic-challanges");
     return null;
   }
 
+  const nextChallange = challangeList[challangeIndex + 1];
+  const prevChallange = challangeList[challangeIndex - 1];
+
   return (
-    <div>
-      <button onClick={() => navigate("/basic-challanges")}>All Challanges</button>
-      <challange.Component />
-      <div className="flex justify-between">
-        <button>Prev</button>
-        <button>Next</button>
+    <div className="h-full flex flex-col gap-4">
+      {/* <challange.Component /> */}
+      <div className="grow">
+        <challange.Component />
+      </div>
+      <div className="flex">
+        {prevChallange ? (
+          <Link
+            to={`/basic-challanges/${prevChallange.id}`}
+            className="mr-auto flex flex-col bg-base-200 p-2 rounded-md shadow-md"
+          >
+            <span className="text-sm text-base-content/50">Prev</span>
+            <span className="text-sm text-base-content/70 font-bold">{prevChallange.name}</span>
+          </Link>
+        ) : null}
+        {nextChallange ? (
+          <Link
+            to={`/basic-challanges/${nextChallange.id}`}
+            className="ml-auto flex flex-col text-right bg-base-200 p-2 rounded-md shadow-md"
+          >
+            <span className="text-sm text-base-content/50">Next</span>
+            <span className="text-sm text-base-content/70 font-bold">{nextChallange.name}</span>
+          </Link>
+        ) : null}
       </div>
     </div>
   );
