@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { ListChallanges } from "../components/list-challanges.tsx";
 import type { Challange } from "../types/index.ts";
 import { Challange as Challange_1 } from "./challange-1.tsx";
+import { Challange as Challange_2 } from "./challange-2.tsx";
 
 const challangeList: Challange[] = [
   {
@@ -9,6 +10,12 @@ const challangeList: Challange[] = [
     name: "Fade In and Fade Out",
     description: "Create a box that fades in when the page loads and fades out when you click a button.",
     Component: Challange_1,
+  },
+  {
+    id: "2",
+    name: "Toggle a Box's Position",
+    description: "Create a box which toggles it's position in left or right when a button is clicked.",
+    Component: Challange_2,
   },
 ];
 
