@@ -28,9 +28,11 @@ export const App = () => {
         <Outlet />
       </main>
       <footer className="footer bg-neutral text-neutral-content items-center p-4">
-        <aside>
-          <p>Copyright @ 2024 - Kowsir Ahmed</p>
-        </aside>
+        <div className="container">
+          <aside>
+            <p>Copyright @ 2024 - Kowsir Ahmed</p>
+          </aside>
+        </div>
       </footer>
     </>
   );
